@@ -57,8 +57,6 @@ WGDigitField *field = [[WGDigitField alloc] initWithSingleDigitView:view numberO
 }];
 ```
 
-That's all. So easy, right?
-
 ## Author
 
 王冠宇, wangguanyu@mobike.com
