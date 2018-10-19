@@ -9,6 +9,9 @@
 
 @import Masonry;
 
+typedef void(^WGDigitFieldFillCompleteBlock) (WGDigitField * digitFiled, NSString *text);
+typedef void(^WGDigitFieldUIChangeBlock) (id digitView);
+
 @interface WGDigitField ()
 
 @property (nonatomic, strong) NSMutableArray<WGDigitView *> *digitViewArray;
@@ -38,18 +41,23 @@
 @implementation WGDigitField
 @synthesize text = _text;
 
-- (instancetype)initWithSingleDigitView:(WGDigitView *)digitView
-                         numberOfDigits:(NSUInteger)count
-                            leadSpacing:(CGFloat)leading
-                            tailSpacing:(CGFloat)tailing
-                            weakenBlock:(WGDigitFieldUIChangeBlock _Nullable)weaken
-                       highlightedBlock:(WGDigitFieldUIChangeBlock _Nullable)highlight
-                      fillCompleteBlock:(WGDigitFieldFillCompleteBlock _Nullable)complete {
+- (instancetype)initWithDigitViewInitBlock:(NS_NOESCAPE id  _Nonnull (^)(void))initBlock
+                            numberOfDigits:(NSUInteger)count
+                               leadSpacing:(CGFloat)leading
+                               tailSpacing:(CGFloat)tailing
+                               weakenBlock:(void (^)(id _Nonnull))weaken
+                          highlightedBlock:(void (^)(id _Nonnull))highlight
+                         fillCompleteBlock:(void (^)(WGDigitField * _Nonnull, NSString * _Nonnull))complete {
     NSAssert(count != 0, @"number of digit should not be zero!");
     if (self = [super initWithFrame:CGRectZero]) {
+        CGFloat width = 0.f;
+        CGFloat height = 0.f;
         for (int i = 0; i < count; i++) {
-            WGDigitView *view = [digitView copy];
+            WGDigitView *view = initBlock();
             view.index = i;
+            
+            width = view.frame.size.width;
+            height = view.frame.size.height;
             
             [self.digitViewArray addObject:view];
             [self addSubview:view];
@@ -58,15 +66,15 @@
         if (count == 1) {
             [self.digitViewArray.firstObject mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.center.equalTo(self);
-                make.width.equalTo(@(digitView.frame.size.width));
-                make.height.equalTo(@(digitView.frame.size.height));
+                make.width.equalTo(@(width));
+                make.height.equalTo(@(height));
             }];
         } else {
-            [self.digitViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:digitView.frame.size.width leadSpacing:leading tailSpacing:tailing];
+            [self.digitViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:width leadSpacing:leading tailSpacing:tailing];
             [self.digitViewArray mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.equalTo(self);
-                make.width.equalTo(@(digitView.frame.size.width));
-                make.height.equalTo(@(digitView.frame.size.height));
+                make.width.equalTo(@(width));
+                make.height.equalTo(@(height));
             }];
         }
         

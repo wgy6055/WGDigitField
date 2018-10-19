@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  └─────┘
  */
 
-@interface WGDigitView : UIView <NSCopying>
+@interface WGDigitView<__covariant ObjectType> : UIView
 
 /**
  初始化一个显示一位数字的 View，通常会将它传给 WGDigitField 用于初始化
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param color digitColor
  @return WGDigitView
  */
-- (instancetype)initWithBackgroundView:(UIView *)view
+- (instancetype)initWithBackgroundView:(ObjectType)view
                              digitFont:(UIFont *)font
                             digitColor:(UIColor *)color NS_DESIGNATED_INITIALIZER;
 
@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  背景 view
  */
-@property (nonatomic, strong, readonly) UIView *backgroundView;
+@property (nonatomic, strong, readonly) ObjectType backgroundView;
 /**
  显示内容的 label
  */

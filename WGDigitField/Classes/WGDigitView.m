@@ -11,10 +11,11 @@
 
 @implementation WGDigitView
 
-- (instancetype)initWithBackgroundView:(UIView *)view
+- (instancetype)initWithBackgroundView:(id)view
                              digitFont:(UIFont *)font
                             digitColor:(UIColor *)color {
-    if (self = [super initWithFrame:view.frame]) {
+    NSAssert([view isKindOfClass:UIView.class], @"background should be an instance of UIView or its subclass.");
+    if (self = [super initWithFrame:((UIView *)view).frame]) {
         _backgroundView = view;
         
         _digitLabel = [[UILabel alloc] init];
@@ -35,18 +36,6 @@
         }];
     }
     return self;
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-    UIView *backgroundView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
-    backgroundView.layer.borderColor = self.backgroundView.layer.borderColor;
-    backgroundView.layer.borderWidth = self.backgroundView.layer.borderWidth;
-    backgroundView.backgroundColor = self.backgroundView.backgroundColor;
-    backgroundView.layer.cornerRadius = self.backgroundView.layer.cornerRadius;
-    backgroundView.layer.masksToBounds = self.backgroundView.layer.masksToBounds;
-    
-    WGDigitView *copy = [[[self class] allocWithZone:zone] initWithBackgroundView:backgroundView digitFont:self.digitLabel.font digitColor:self.digitLabel.textColor];
-    return copy;
 }
 
 - (BOOL)hasText {

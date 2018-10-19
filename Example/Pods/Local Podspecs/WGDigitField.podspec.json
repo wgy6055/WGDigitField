@@ -4,6 +4,7 @@
   "summary": "A customizable digit input field.",
   "description": "To make sure user inputing security code with a smooth experience, this pod will help you initializing a customized digit field with very short codes.",
   "homepage": "https://github.com/wgy6055/WGDigitField",
+  "screenshots": "https://s1.ax1x.com/2018/10/19/iwvqAS.png",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
