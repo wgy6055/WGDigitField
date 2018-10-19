@@ -16,7 +16,7 @@ To make sure user inputing security code with a smooth experience, this pod will
                        DESC
 
   s.homepage         = 'https://github.com/wgy6055/WGDigitField'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://s1.ax1x.com/2018/10/19/iwjgRs.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '王冠宇' => 'wangguanyu@mobike.com' }
   s.source           = { :git => 'https://github.com/wgy6055/WGDigitField.git', :tag => s.version.to_s }
