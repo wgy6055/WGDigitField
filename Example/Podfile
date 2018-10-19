@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WGDigitField_Example' do
+  pod 'WGDigitField', :path => '../'
+
+  target 'WGDigitField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
