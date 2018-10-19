@@ -9,23 +9,17 @@
 Pod::Spec.new do |s|
   s.name             = 'WGDigitField'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of WGDigitField.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'A customizable digit input field.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+To make sure user inputing security code with a smooth experience, this pod will help you initializing a customized digit field with very short codes.
                        DESC
 
-  s.homepage         = 'https://github.com/王冠宇/WGDigitField'
+  s.homepage         = 'https://github.com/wgy6055/WGDigitField'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '王冠宇' => 'wangguanyu@mobike.com' }
-  s.source           = { :git => 'https://github.com/王冠宇/WGDigitField.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/wgy6055/WGDigitField.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -37,6 +31,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.dependency 'Masonry'
 end

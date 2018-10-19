@@ -1,0 +1,28 @@
+{
+  "name": "WGDigitField",
+  "version": "0.1.0",
+  "summary": "A customizable digit input field.",
+  "description": "To make sure user inputing security code with a smooth experience, this pod will help you initializing a customized digit field with very short codes.",
+  "homepage": "https://github.com/wgy6055/WGDigitField",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "王冠宇": "wangguanyu@mobike.com"
+  },
+  "source": {
+    "git": "https://github.com/wgy6055/WGDigitField.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WGDigitField/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  }
+}
