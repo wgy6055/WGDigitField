@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0518B3CEE6B4B212DFBCF270 /* WGDigitField.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WGDigitField.podspec; path = ../WGDigitField.podspec; sourceTree = "<group>"; };
-		06A9E8C3E4936538CFD3E2A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0518B3CEE6B4B212DFBCF270 /* WGDigitField.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WGDigitField.podspec; path = ../WGDigitField.podspec; sourceTree = "<group>"; };
+		06A9E8C3E4936538CFD3E2A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		387C39EDD9168EEC6A49F965 /* Pods-WGDigitField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGDigitField_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WGDigitField_Tests/Pods-WGDigitField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4C23936A12F01F055DD34B14 /* Pods_WGDigitField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WGDigitField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* WGDigitField_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGDigitField_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1462C46F4713B96F8E83737 /* Pods_WGDigitField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WGDigitField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B149036C96923AAEDDF12AEF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B149036C96923AAEDDF12AEF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BF4ED8DA96BDF064F289DA7F /* Pods-WGDigitField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGDigitField_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WGDigitField_Example/Pods-WGDigitField_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CCFF6270D3FC4F89CEBDEDE8 /* Pods-WGDigitField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGDigitField_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WGDigitField_Example/Pods-WGDigitField_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -490,9 +490,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WGDigitField/WGDigitField-Prefix.pch";
 				INFOPLIST_FILE = "WGDigitField/WGDigitField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -505,9 +507,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WGDigitField/WGDigitField-Prefix.pch";
 				INFOPLIST_FILE = "WGDigitField/WGDigitField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
