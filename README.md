@@ -20,7 +20,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 * Supporting autofill for iOS 12. 
 
 <div align=center>
-<img src=https://s1.ax1x.com/2018/10/19/iwvqAS.png width=200/>
+<img src=https://s1.ax1x.com/2018/10/20/i0qmqO.gif width=200/>
 </div>
 
 ## Installation
