@@ -1,6 +1,6 @@
 PODS:
   - Masonry (1.1.0)
-  - WGDigitField (0.1.0):
+  - WGDigitField (1.0.0):
     - Masonry
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  WGDigitField: 30092dc8734d43acc5bc7ad6ad4cf5c7facd635b
+  WGDigitField: 0b267a54eee04e904894f8d3ec6dca4dfa1260a8
 
 PODFILE CHECKSUM: d9d38e83fc64a459f52407eb918ad11e96b1ef0b
 
