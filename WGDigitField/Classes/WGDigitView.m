@@ -23,6 +23,7 @@
         _digitLabel.textColor = color;
         _digitLabel.textAlignment = NSTextAlignmentCenter;
         _digitLabel.numberOfLines = 1;
+        _digitLabel.backgroundColor = [UIColor clearColor];
         
         [_backgroundView addSubview:_digitLabel];
         [_digitLabel mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -9,7 +9,7 @@
 
 @import Masonry;
 
-typedef void(^WGDigitFieldFillCompleteBlock) (WGDigitField * digitFiled, NSString *text);
+typedef void(^WGDigitFieldFillCompleteBlock) (WGDigitField * digitFiled, NSArray<id> *digitViewArray, NSString *text);
 typedef void(^WGDigitFieldUIChangeBlock) (id digitView);
 
 @interface WGDigitField ()
@@ -41,19 +41,19 @@ typedef void(^WGDigitFieldUIChangeBlock) (id digitView);
 @implementation WGDigitField
 @synthesize text = _text;
 
-- (instancetype)initWithDigitViewInitBlock:(NS_NOESCAPE id  _Nonnull (^)(void))initBlock
+- (instancetype)initWithDigitViewInitBlock:(NS_NOESCAPE id  _Nonnull (^)(NSInteger))initBlock
                             numberOfDigits:(NSUInteger)count
                                leadSpacing:(CGFloat)leading
                                tailSpacing:(CGFloat)tailing
                                weakenBlock:(void (^)(id _Nonnull))weaken
                           highlightedBlock:(void (^)(id _Nonnull))highlight
-                         fillCompleteBlock:(void (^)(WGDigitField * _Nonnull, NSString * _Nonnull))complete {
+                         fillCompleteBlock:(void (^)(WGDigitField * _Nonnull, NSArray<id> * _Nonnull, NSString * _Nonnull))complete {
     NSAssert(count != 0, @"number of digit should not be zero!");
     if (self = [super initWithFrame:CGRectZero]) {
         CGFloat width = 0.f;
         CGFloat height = 0.f;
         for (int i = 0; i < count; i++) {
-            WGDigitView *view = initBlock();
+            WGDigitView *view = initBlock(i);
             view.index = i;
             
             width = view.frame.size.width;
@@ -199,7 +199,7 @@ typedef void(^WGDigitFieldUIChangeBlock) (id digitView);
         }
     }
     if (self.currentIndex == self.numberOfDigits) {
-        !self.completionBlock ?: self.completionBlock(self, self.text);
+        !self.completionBlock ?: self.completionBlock(self, self.digitViewArray, self.text);
     }
 }
 

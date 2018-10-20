@@ -11,12 +11,12 @@
 
 /*
  
- ┌─────────────────────────────────────┐
- │   ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐   |
+             ┌─────────────────────────────────────┐
+             │   ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐   |
  leadSpacing ==> │     | │     | │     | │     | <== tailSpacing
- │   │  9  | │  5  | │  2  | │  7 <===== digitView
- │   └─────┘ └─────┘ └─────┘ └─────┘   |
- └─────────────────────────────────────┘
+             │   │  9  | │  5  | │  2  | │  7 <===== digitView
+             │   └─────┘ └─────┘ └─────┘ └─────┘   |
+             └─────────────────────────────────────┘
  
  */
 
@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Note: 实现 UITextInput 只是为了支持 iOS 12 验证码一键填充
  实际上实现 UIKeyInput 已经足够实现所有功能
+ 
+ ObjectType: Class of digitView
  */
 @interface WGDigitField<__covariant ObjectType> : UIControl <UIKeyInput, UITextInput>
 
@@ -42,13 +44,13 @@ NS_ASSUME_NONNULL_BEGIN
  @param complete 输入框被填满时的动作
  @return returns an instance of WGDigitField
  */
-- (instancetype)initWithDigitViewInitBlock:(NS_NOESCAPE ObjectType (^)(void))initBlock
+- (instancetype)initWithDigitViewInitBlock:(NS_NOESCAPE ObjectType (^)(NSInteger index))initBlock
                             numberOfDigits:(NSUInteger)count
                                leadSpacing:(CGFloat)leading
                                tailSpacing:(CGFloat)tailing
                                weakenBlock:(void (^ _Nullable)(ObjectType digitView))weaken
                           highlightedBlock:(void (^ _Nullable)(ObjectType digitView))highlight
-                         fillCompleteBlock:(void (^ _Nullable)(WGDigitField *digitField, NSString *text))complete NS_DESIGNATED_INITIALIZER;
+                         fillCompleteBlock:(void (^ _Nullable)(WGDigitField *digitField, NSArray<ObjectType> *digitViewArray, NSString *text))complete NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;

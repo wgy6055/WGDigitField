@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
  └─────┘
  */
 
+/**
+ ObjectType: Class of backgroundView (should be a kind of UIView)
+ */
 @interface WGDigitView<__covariant ObjectType> : UIView
 
 /**

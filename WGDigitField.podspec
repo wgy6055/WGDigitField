@@ -16,11 +16,11 @@ To make sure user inputing security code with a smooth experience, this pod will
                        DESC
 
   s.homepage         = 'https://github.com/wgy6055/WGDigitField'
-  s.screenshots      = 'https://s1.ax1x.com/2018/10/19/iwvqAS.png'
+  s.screenshots      = 'https://s1.ax1x.com/2018/10/20/i0qmqO.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '王冠宇' => 'wangguanyu@mobike.com' }
   s.source           = { :git => 'https://github.com/wgy6055/WGDigitField.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'http://weibo.com/131471169'
 
   s.ios.deployment_target = '8.0'
 
