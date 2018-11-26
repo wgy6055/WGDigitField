@@ -1,13 +1,13 @@
 PODS:
   - Masonry (1.1.0)
-  - WGDigitField (1.0.0):
+  - WGDigitField (1.0.1):
     - Masonry
 
 DEPENDENCIES:
   - WGDigitField (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Masonry
 
 EXTERNAL SOURCES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  WGDigitField: 0b267a54eee04e904894f8d3ec6dca4dfa1260a8
+  WGDigitField: 9ae6cec1362bb57a9e288928f3d4a9036a3a89e5
 
 PODFILE CHECKSUM: d9d38e83fc64a459f52407eb918ad11e96b1ef0b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

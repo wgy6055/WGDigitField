@@ -155,11 +155,15 @@ typedef void(^WGDigitFieldUIChangeBlock) (id digitView);
 
 #pragma mark - UITextInputTraits
 - (UIKeyboardType)keyboardType {
-    if (@available(iOS 10.0, *)) {
-        return UIKeyboardTypeASCIICapableNumberPad;
-    } else {
-        return UIKeyboardTypeNumberPad;
-    }
+    // https://github.com/wgy6055/WGDigitField/issues/1
+    // 因为 UIKeyboardTypeASCIICapableNumberPad 不支持本地化自动填充提示
+    // 所以改为使用 UIKeyboardTypeNumberPad
+    return UIKeyboardTypeNumberPad;
+//    if (@available(iOS 10.0, *)) {
+//        return UIKeyboardTypeASCIICapableNumberPad;
+//    } else {
+//        return UIKeyboardTypeNumberPad;
+//    }
 }
 
 - (UITextContentType)textContentType {
